@@ -1,0 +1,27 @@
+{
+  "name": "node-diamond-example",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/functionalscript/node-diamond-example.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/functionalscript/node-diamond-example/issues"
+  },
+  "homepage": "https://github.com/functionalscript/node-diamond-example#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "node-example": "github:functionalscript/node-example",
+    "node-ref-example": "github:functionalscript/node-ref-example"
+  }
+}
