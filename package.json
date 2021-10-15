@@ -21,7 +21,7 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "node-example": "github:functionalscript/node-example",
+    "x": "github:functionalscript/node-example",
     "node-ref-example": "github:functionalscript/node-ref-example"
   }
 }
