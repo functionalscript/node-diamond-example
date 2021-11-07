@@ -3,5 +3,5 @@ const refExample = require('node-ref-example')
 module.exports = {
     "example": example,
     "refExample": refExample,
-    "result": example.multiply(10)(23),
+    "result": example["multiply"](10)(23),
 }
