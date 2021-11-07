@@ -1,7 +1,7 @@
-const example = require('x')
+const example = require('node-example')
 const refExample = require('node-ref-example')
 module.exports = {
-    example,
-    refExample,
-    result: example.c(10, 23),
+    "example": example,
+    "refExample": refExample,
+    "result": example.multiply(10)(23),
 }
