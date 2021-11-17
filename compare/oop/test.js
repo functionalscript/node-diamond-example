@@ -13,9 +13,9 @@ const main = async () => {
     const tree = await repoApi.tree(sha)
     for (let i of tree.tree) {
         if (i.type === 'blob') {
-            console.log(`file: ${i.path}:`)
+            const path = i.path
             const file = await repoApi.file(sha, i.path)
-            console.log(file)
+            console.log(`file: ${path}, size: ${file.length}`)
         }
     }
 }

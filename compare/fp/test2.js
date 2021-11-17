@@ -15,10 +15,9 @@ const main = async () => {
     const tree = await f(gitHubApi.tree)({ user, repo, sha })
     for (let i of tree.tree) {
         if (i.type === 'blob') {
-            const path = i.path
-            console.log(`file: ${path}:`)
+            const path = i.path            
             const file = await f(gitHubApi.file)({ user, repo, sha, path })
-            console.log(file)
+            console.log(`file: ${path}, size: ${file.length}`)
         }
     }
 }
