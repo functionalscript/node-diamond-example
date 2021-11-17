@@ -33,7 +33,7 @@ const io = require('../io')
  * }} FileId
  */
 
- const api = {
+ const gitHubApi = {
     /** @type {o.Operation<string, gh.Repos>} */
     repos: {
         in: userName => `https://api.github.com/users/${userName}/repos`,
@@ -65,7 +65,7 @@ const io = require('../io')
 
 /**
  * @typedef {{
- *  [k in keyof typeof api]: typeof api[k] extends o.Operation<infer I, infer O> ? (_: I) => Promise<O> : never
+ *  [k in keyof typeof gitHubApi]: typeof gitHubApi[k] extends o.Operation<infer I, infer O> ? (_: I) => Promise<O> : never
  * }} AsyncIo
  */
 
@@ -74,10 +74,11 @@ const gitHubAsyncApi = fetch => {
     /** @type {(_: o.Operation<any, any>) => (_: any) => Promise<any>} */
     const f = o.asyncOp(fetch)
     /** @type {any} */
-    const result = Object.fromEntries(Object.entries(api).map(([k, v]) => [k, f(v)]))
+    const result = Object.fromEntries(Object.entries(gitHubApi).map(([k, v]) => [k, f(v)]))
     return result
 }
 
 module.exports = {
+    gitHubApi,
     gitHubAsyncApi
 }
